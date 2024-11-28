@@ -13,7 +13,7 @@ model_path = './next_word_GRU.h5'
 if os.path.exists(model_path):
     model = load_model(model_path)
 else:
-    st.error("Model file not found. Please make sure 'next_word_lstm.h5' is in the correct directory.")
+    st.error("Model file not found. Please make sure 'next_word_GRU.h5' is in the correct directory.")
     st.stop()
 
 # Load the tokenizer
@@ -42,7 +42,7 @@ def predict_next_word(model, tokenizer, text, max_sequence_len):
 st.set_page_config(page_title="Next Word Prediction", page_icon="🔮", layout="centered")
 
 # Main page title and description
-st.title("🔮 Next Word Prediction with LSTM ")
+st.title("🔮 Next Word Prediction with GRU ")
 st.markdown("""
 <style>
     .main-title {
@@ -60,7 +60,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.write("### Enter a sequence of words to predict the next word 🌐")
-st.write("This app uses an LSTM model to predict the next word in the input sequence.")
+st.write("This app uses an GRU model to predict the next word in the input sequence.")
 
 # Input box for user text
 input_text = st.text_input("Input your sequence of words here:", "To be or not to")
@@ -98,5 +98,5 @@ st.markdown("""
 # Footer section
 st.markdown("""
 ---
-*Developed by [Your Name]. This application showcases a simple LSTM-based next word prediction model. Enjoy exploring!*
+*Developed by [Ekansh Sharma]. This application showcases a simple GRU-based next word prediction model. Enjoy exploring!*
 """)
